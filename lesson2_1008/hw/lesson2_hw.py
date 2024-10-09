@@ -1,6 +1,6 @@
 import csv
 
-with open('student.csv', encoding='utf-8') as file1:
+with open( './student.csv', encoding='utf-8') as file1:
     
     reader = csv.reader(file1)
     l1 = []
