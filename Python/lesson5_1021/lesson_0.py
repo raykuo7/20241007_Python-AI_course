@@ -1,7 +1,6 @@
 from ttkthemes import ThemedTk
 from tkinter import ttk
-from ttkthemes import ThemedTk
-from tkinter import ttk
+
 
 class Window(ThemedTk):
     def __init__(self,*args,**kwargs):
@@ -9,12 +8,12 @@ class Window(ThemedTk):
         self.title('使用ttk的套件')
         style = ttk.Style(self)        
 
-        topFrame = ttk.Frame(self,borderwidth=1,relief='groove')
-        btn1 = ttk.Button(topFrame,text="按鈕1")
+        topFrame = ttk.Frame(self,borderwidth=1,relief='groove',)
+        btn1 = ttk.Button(topFrame,text="按鈕1", command=self.userclick1) # commend 為按鈕控制
         btn1.pack(side='left',expand=True,fill='x',padx=10)
-        btn2 = ttk.Button(topFrame,text="按鈕2")
+        btn2 = ttk.Button(topFrame,text="按鈕2", command=self.userclick2)
         btn2.pack(side='left',expand=True,fill='x')
-        btn3 = ttk.Button(topFrame,text="按鈕3")
+        btn3 = ttk.Button(topFrame,text="按鈕3", command=self.userclick3)
         btn3.pack(side='left',expand=True,fill='x',padx=10)
         topFrame.pack(padx=10,pady=(10,0),ipadx=10,ipady=10,expand=True,fill='x')
 
@@ -52,7 +51,12 @@ class Window(ThemedTk):
         btnc3 = ttk.Button(f3,text="按鈕3")
         btnc3.pack(fill='x', padx=10, pady=(5, 5), ipady=100/3)
 
-
+    def userclick1(self):
+        print('hi but1')
+    def userclick2(self):
+        print('hi but2')
+    def userclick3(self):
+        print('hi but3')
 def main():
     window = Window(theme="arc")
     window.mainloop()
