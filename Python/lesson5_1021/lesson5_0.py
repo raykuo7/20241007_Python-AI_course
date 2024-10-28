@@ -65,7 +65,7 @@ class Window(ThemedTk):
     def userclick3(self):
         print('hi but3')
 
-    def btna1_click(self, event):       # link
+    def btna1_click(self, event):       # link with event
         print('btna1_click')
         print(event)
         print(event.widget.configure(text='pressed!'))  
